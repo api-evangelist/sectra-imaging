@@ -1,0 +1,182 @@
+aid: sectra-imaging
+url: https://raw.githubusercontent.com/api-evangelist/sectra-imaging/refs/heads/main/apis.yml
+name: Sectra
+kind: company
+description: Sectra is a Swedish medical technology company providing an enterprise
+  imaging platform (PACS/VNA) for radiology, pathology, cardiology, orthopaedics,
+  and other -ologies. Integration is delivered through established healthcare
+  interoperability standards rather than a single open developer API - DICOM and
+  DICOMweb for imaging, HL7 for orders/results messaging, IHE XDS for cross-enterprise
+  document sharing, FHIR/FHIRcast for clinical context synchronization, and a Web
+  Content API for embedding third-party content and applications into the diagnostic
+  viewer. AI and third-party applications integrate through the Sectra Amplifier
+  Marketplace / Amplifier Services ecosystem. Sectra's API and integration surface
+  is partner- and customer-gated (deployed per-site, no public self-service developer
+  portal); the API entries below are honestly modeled from Sectra's documented
+  standards and interfaces, not scraped from an open OpenAPI catalog. Sectra also
+  authored the first open-source FHIRcast sandbox and reference implementation.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Medical Imaging
+- Enterprise Imaging
+- PACS
+- VNA
+- Radiology
+- Pathology
+- Healthcare
+- DICOM
+- DICOMweb
+- HL7
+- FHIR
+- FHIRcast
+- IHE XDS
+- Interoperability
+- Partner API
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: sectra-imaging:sectra-imaging-dicomweb-api
+  name: Sectra DICOMweb API
+  tags:
+  - DICOMweb
+  - Imaging
+  - Studies
+  - QIDO-RS
+  - WADO-RS
+  - STOW-RS
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+  endpointsModeled: true
+  properties:
+  - url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+    type: Documentation
+  - url: https://www.dicomstandard.org/using/dicomweb
+    type: Specification
+  description: Web-based access to imaging studies, series, and instances using the
+    DICOM standard's RESTful services - QIDO-RS (query), WADO-RS (retrieve), and
+    STOW-RS (store). Sectra's enterprise imaging platform supports DICOM and
+    DICOMweb; the concrete base URL is deployed per customer site and is not a
+    public self-service endpoint. Endpoints here are modeled from the DICOMweb
+    standard, not fabricated as a Sectra-hosted public surface.
+- aid: sectra-imaging:sectra-imaging-hl7-integration-interface
+  name: Sectra HL7 Integration Interface
+  tags:
+  - HL7
+  - Orders
+  - Results
+  - Worklist
+  - Messaging
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+  endpointsModeled: true
+  properties:
+  - url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+    type: Documentation
+  - url: https://www.hl7.org/implement/standards/
+    type: Specification
+  description: HL7 v2 messaging interface for exchanging orders, scheduling,
+    worklist, and results/reports between Sectra PACS/RIS and surrounding EMR/RIS
+    systems. This is a message-based (typically MLLP/HL7 v2) interface configured
+    per deployment, not a public REST API; it is documented here as a logical
+    integration surface grounded in Sectra's stated HL7 interface support.
+- aid: sectra-imaging:sectra-imaging-fhircast-interface
+  name: Sectra FHIRcast Interface
+  tags:
+  - FHIRcast
+  - FHIR
+  - Context Synchronization
+  - Clinical Workflow
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://medical.sectra.com/resources/sectra-forefront-development-fhircast/
+  endpointsModeled: true
+  properties:
+  - url: https://medical.sectra.com/resources/sectra-forefront-development-fhircast/
+    type: Documentation
+  - url: https://fhircast.org/
+    type: Specification
+  - url: https://github.com/fhircast
+    type: SourceCode
+  description: Clinical context synchronization using the FHIRcast standard, which
+    Sectra helped originate (with Epic) and for which Sectra published the first
+    open-source sandbox and reference implementation under the FHIRcast GitHub
+    organization. Enables driven-context events (e.g. patient/study open, close)
+    to keep the Sectra viewer in sync with the EMR and other clinical applications.
+- aid: sectra-imaging:sectra-imaging-web-content-api
+  name: Sectra Web Content API
+  tags:
+  - Web Content API
+  - Viewer Integration
+  - Embedding
+  - Launch Context
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+  endpointsModeled: true
+  properties:
+  - url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+    type: Documentation
+  description: Web Content API for embedding third-party web content, results, and
+    applications into the Sectra diagnostic viewer in patient/study context, and
+    for launching Sectra in context from other systems. This is a customer- and
+    partner-configured integration point exposed within the platform rather than a
+    public developer API.
+- aid: sectra-imaging:sectra-imaging-xds-interface
+  name: Sectra IHE XDS Interface
+  tags:
+  - IHE XDS
+  - Document Sharing
+  - Cross-Enterprise
+  - Interoperability
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+  endpointsModeled: true
+  properties:
+  - url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+    type: Documentation
+  - url: https://www.ihe.net/resources/profiles/
+    type: Specification
+  description: IHE Cross-Enterprise Document Sharing (XDS/XDS-I) interface for
+    registering, querying, and retrieving imaging documents and manifests across
+    enterprise boundaries. A profile-based interoperability interface configured
+    per deployment, modeled here from Sectra's stated XDS interface support.
+- aid: sectra-imaging:sectra-imaging-amplifier-marketplace
+  name: Sectra Amplifier Marketplace Integration
+  tags:
+  - Amplifier Marketplace
+  - AI Applications
+  - Partner Ecosystem
+  - Integration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://amplifiermarketplace.sectra.com/
+  endpointsModeled: true
+  properties:
+  - url: https://amplifiermarketplace.sectra.com/
+    type: Documentation
+  - url: https://amplifiermarketplace.sectra.com/about/
+    type: Documentation
+  - url: https://amplifiermarketplace.sectra.com/vendor-partners/
+    type: Documentation
+  - url: https://medical.sectra.com/product/sectra-amplifier-services/
+    type: Documentation
+  description: The Amplifier Marketplace / Amplifier Services ecosystem through which
+    AI and third-party applications integrate with the Sectra diagnostic viewer.
+    Two partnership tiers exist (Amplifier Partner and Amplifier Integrator). The
+    technical integration is partner-gated and available to Sectra PACS customers;
+    there is no public self-service developer portal or open API reference - vendors
+    engage Sectra directly.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/sectra
+- type: Website
+  url: https://sectra.com/
+- type: Website
+  url: https://medical.sectra.com/
+- type: Documentation
+  url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+- type: Documentation
+  url: https://amplifiermarketplace.sectra.com/
+- type: SourceCode
+  url: https://github.com/fhircast
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

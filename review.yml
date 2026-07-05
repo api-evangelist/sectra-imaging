@@ -1,0 +1,105 @@
+aid: sectra-imaging
+name: Sectra
+review:
+  question: Does Sectra expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Sectra does not publish a public,
+    self-service developer API of any kind - and specifically no documented
+    public WebSocket (ws:// or wss://) endpoint. Sectra's integration surface is
+    delivered through established healthcare interoperability standards deployed
+    per customer site: DICOM/DICOMweb (RESTful request/response), HL7 v2
+    (message-based, typically MLLP), IHE XDS/XDS-I (SOAP/profile-based web
+    services), FHIR/FHIRcast, and a Web Content API for viewer embedding.
+    FHIRcast context synchronization does use a subscription/notification model
+    (WebSub-style callbacks, and the spec allows a WebSocket binding), but this
+    is the FHIRcast standard's transport - not a documented, Sectra-hosted
+    public WebSocket API - and any Sectra deployment of it is customer-gated.
+    There is no public server-push transport on a Sectra-owned open API to model.
+findings:
+  summary: |
+    Sectra does not publish a documented public WebSocket API, and more broadly
+    does not operate a public, self-service developer portal or open API
+    reference. Sectra is an enterprise medical imaging (PACS/VNA) vendor. Its
+    APIs and interfaces are partner- and customer-gated: they are configured and
+    deployed inside a customer's Sectra installation, and third-party/AI vendors
+    integrate through the Sectra Amplifier Marketplace / Amplifier Services
+    program (Amplifier Partner and Amplifier Integrator tiers), engaging Sectra
+    directly rather than downloading public docs. The integration surface is
+    built on healthcare standards - DICOM and DICOMweb (QIDO-RS/WADO-RS/STOW-RS)
+    for imaging, HL7 for orders/results, IHE XDS/XDS-I for cross-enterprise
+    document sharing, FHIR/FHIRcast for clinical context synchronization, and a
+    Web Content API for embedding content into the diagnostic viewer. No public
+    WebSocket endpoint is documented on any Sectra-owned open API.
+  accessModel: |
+    Partner/customer-gated. No public self-service signup, no public OpenAPI
+    catalog, no public API reference. Access to integration interfaces requires
+    being a Sectra PACS customer and/or an Amplifier Marketplace partner.
+    Endpoints in apis.yml are modeled from Sectra's documented standards and are
+    marked endpointsModeled: true; they are not scraped from an open surface.
+  openSource: |
+    Sectra co-originated the FHIRcast standard (with Epic) and published the
+    first open-source FHIRcast sandbox and reference implementation under the
+    FHIRcast GitHub organization (github.com/fhircast). This is the one genuinely
+    open, public developer resource in Sectra's story; it is community/standard
+    tooling rather than a Sectra product API.
+  transports:
+    - protocol: DICOMweb (REST)
+      scheme: https
+      documented: true
+      note: QIDO-RS/WADO-RS/STOW-RS. Deployed per customer site; no public base URL.
+    - protocol: HL7 v2
+      scheme: mllp
+      documented: true
+      note: Message-based orders/results/worklist interface, configured per deployment.
+    - protocol: IHE XDS/XDS-I
+      scheme: https
+      documented: true
+      note: SOAP/profile-based cross-enterprise document sharing web services.
+    - protocol: FHIRcast
+      scheme: https
+      documented: true
+      note: Context synchronization via subscription/notification (WebSub-style); spec permits a WebSocket binding, but no Sectra-hosted public WebSocket endpoint is documented.
+    - protocol: Web Content API
+      scheme: https
+      documented: true
+      note: Embeds third-party web content/apps into the diagnostic viewer in context.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No documented public WebSocket endpoint on any Sectra-owned open API as of the review date.
+  endpointsConfirmedRest: []
+sources:
+  - url: https://medical.sectra.com/solutionarea/enterprise-imaging-platform/
+    type: Documentation
+    note: Lists supported interfaces - DICOM, HL7, XDS, Web Content API, FHIRcast. No public API base URL or WebSocket.
+  - url: https://amplifiermarketplace.sectra.com/
+    type: Documentation
+    note: Amplifier Marketplace of AI apps that integrate with the Sectra viewer.
+  - url: https://amplifiermarketplace.sectra.com/vendor-partners/
+    type: Documentation
+    note: Amplifier Partner vs Amplifier Integrator tiers; integration details are partner-gated, no public API docs.
+  - url: https://medical.sectra.com/product/sectra-amplifier-services/
+    type: Documentation
+    note: Amplifier Services available to Sectra PACS customers.
+  - url: https://medical.sectra.com/resources/sectra-forefront-development-fhircast/
+    type: Documentation
+    note: Sectra's role in FHIRcast and the open-source FHIRcast sandbox/reference implementation.
+  - url: https://github.com/fhircast
+    type: SourceCode
+    note: Open-source FHIRcast sandbox and reference implementation (community/standard tooling).
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No public WebSocket surface exists on any Sectra-owned open API, and Sectra
+    does not run a public self-service developer API at all. The entry is an
+    honest gated stub: logical APIs are modeled from Sectra's documented
+    healthcare-standard interfaces (DICOMweb, HL7, XDS, FHIRcast, Web Content
+    API) plus the Amplifier Marketplace integration program, with endpoint
+    detail marked endpointsModeled rather than fabricated. No AsyncAPI document
+    was created because there is no documented Sectra-hosted server-push
+    transport to model.
