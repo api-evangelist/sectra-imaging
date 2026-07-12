@@ -165,6 +165,10 @@ apis:
     there is no public self-service developer portal or open API reference - vendors
     engage Sectra directly.
 common:
+- type: VulnerabilityDisclosure
+  url: security/sectra-imaging-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/sectra-imaging-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/sectra
 - type: Website
