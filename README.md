@@ -64,11 +64,6 @@ IHE Cross-Enterprise Document Sharing (XDS/XDS-I) for registering, querying, and
 
 - **Human URL:** [Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
 
-### Sectra Amplifier Marketplace Integration
-
-The Amplifier Marketplace / Amplifier Services ecosystem through which AI and third-party applications integrate with the Sectra viewer. Two partnership tiers (Amplifier Partner, Amplifier Integrator). Partner-gated, available to Sectra PACS customers; no public self-service portal.
-
-- **Human URL:** [Sectra Amplifier Marketplace](https://amplifiermarketplace.sectra.com/)
 
 ## Common Properties
 
