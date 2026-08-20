@@ -57,6 +57,12 @@ apis:
     name: Sectra HL7 Integration Interface
     tags:
       - HL7
+      - Order
+      - Results
+      - Worklist
+      - Messaging
+    tags_raw:
+      - HL7
       - Orders
       - Results
       - Worklist
