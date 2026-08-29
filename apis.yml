@@ -3,6 +3,17 @@ url: https://raw.githubusercontent.com/api-evangelist/sectra-imaging/refs/heads/
 name: Sectra
 kind: company
 description: Sectra is a Swedish medical technology company providing an enterprise imaging platform (PACS/VNA) for radiology, pathology, cardiology, orthopaedics, and other -ologies. Integration is delivered through established healthcare interoperability standards rather than a single open developer API - DICOM and DICOMweb for imaging, HL7 for orders/results messaging, IHE XDS for cross-enterprise document sharing, FHIR/FHIRcast for clinical context synchronization, and a Web Content API for embedding third-party content and applications into the diagnostic viewer. AI and third-party applications integrate through the Sectra Amplifier Marketplace / Amplifier Services ecosystem. Sectra's API and integration surface is partner- and customer-gated (deployed per-site, no public self-service developer portal); the API entries below are honestly modeled from Sectra's documented standards and interfaces, not scraped from an open OpenAPI catalog. Sectra also authored the first open-source FHIRcast sandbox and reference implementation.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
