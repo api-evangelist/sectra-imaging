@@ -1,4 +1,4 @@
-# Sectra (sectra-imaging)
+# Sectra
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,85 +64,89 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Sectra is a Swedish medical technology company providing an enterprise imaging platform (PACS/VNA) for radiology, pathology, cardiology, orthopaedics, and other clinical -ologies. Rather than a single open developer API, Sectra delivers integration through established healthcare interoperability standards: **DICOM/DICOMweb** for imaging, **HL7** for orders and results messaging, **IHE XDS/XDS-I** for cross-enterprise document sharing, **FHIR/FHIRcast** for clinical context synchronization, and a **Web Content API** for embedding third-party content into the diagnostic viewer. AI and third-party applications integrate through the **Sectra Amplifier Marketplace / Amplifier Services** ecosystem.
+Sectra is a Swedish medical technology company providing an enterprise imaging platform (PACS/VNA) for radiology, pathology, cardiology, orthopaedics, and other -ologies. Integration is delivered through established healthcare interoperability standards rather than a single open developer API - DICOM and DICOMweb for imaging, HL7 for orders/results messaging, IHE XDS for cross-enterprise document sharing, FHIR/FHIRcast for clinical context synchronization, and a Web Content API for embedding third-party content and applications into the diagnostic viewer. AI and third-party applications integrate through the Sectra Amplifier Marketplace / Amplifier Services ecosystem. Sectra's API and integration surface is partner- and customer-gated (deployed per-site, no public self-service developer portal); the API entries below are honestly modeled from Sectra's documented standards and interfaces, not scraped from an open OpenAPI catalog. Sectra also authored the first open-source FHIRcast sandbox and reference implementation.
 
-**Access model:** Sectra's API and integration surface is **partner- and customer-gated**. Integrations are deployed per-site within a Sectra PACS installation; there is no public self-service developer portal, open API reference, or downloadable OpenAPI catalog. This entry is therefore an **honest stub** - the API entries are modeled from Sectra's publicly documented standards and interfaces (DICOMweb, HL7, XDS, FHIRcast, Web Content API), not scraped from an open, self-service API surface. Endpoint-level detail is marked `endpointsModeled: true` and not fabricated as Sectra-hosted public endpoints.
+**Areas:** Medical Imaging · Enterprise Imaging · PACS · VNA · Radiology · Pathology · Healthcare · DICOM · DICOMweb · HL7 · FHIR · FHIRcast
 
-Notably, Sectra co-originated the **FHIRcast** standard (with Epic) and published the first open-source FHIRcast sandbox and reference implementation under the FHIRcast GitHub organization - the one genuinely open, public developer resource in the Sectra story.
+## Sectra on APIs.io
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/sectra-imaging/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/sectra-imaging/refs/heads/main/apis.yml)
+Everything profiled for Sectra is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sectra-imaging/](https://apis.io/providers/sectra-imaging/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Medical Imaging
-- Enterprise Imaging
-- PACS
-- VNA
-- Radiology
-- Pathology
-- Healthcare
-- DICOM
-- DICOMweb
-- HL7
-- FHIR
-- FHIRcast
-- IHE XDS
-- Interoperability
-- Partner API
+- [Sectra DICOMweb API](https://apis.io/apis/sectra-imaging/sectra-imaging-dicomweb-api/) — Web-based access to imaging studies, series, and instances using the DICOM standard's RESTful services - QIDO-RS (query), WADO-RS (retrieve), and STOW-RS…
+- [Sectra HL7 Integration Interface](https://apis.io/apis/sectra-imaging/sectra-imaging-hl7-integration-interface/) — HL7 v2 messaging interface for exchanging orders, scheduling, worklist, and results/reports between Sectra PACS/RIS and surrounding EMR/RIS systems. This is…
+- [Sectra FHIRcast Interface](https://apis.io/apis/sectra-imaging/sectra-imaging-fhircast-interface/) — Clinical context synchronization using the FHIRcast standard, which Sectra helped originate (with Epic) and for which Sectra published the first open-source…
+- [Sectra Web Content API](https://apis.io/apis/sectra-imaging/sectra-imaging-web-content-api/) — Web Content API for embedding third-party web content, results, and applications into the Sectra diagnostic viewer in patient/study context, and for…
+- [Sectra IHE XDS Interface](https://apis.io/apis/sectra-imaging/sectra-imaging-xds-interface/) — IHE Cross-Enterprise Document Sharing (XDS/XDS-I) interface for registering, querying, and retrieving imaging documents and manifests across enterprise…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs (modeled from documented standards)
+#### Security (2)
 
-### Sectra DICOMweb API
+Authentication, trust centre, and vulnerability disclosure.
 
-Web-based access to imaging studies, series, and instances via the DICOM standard's RESTful services - QIDO-RS (query), WADO-RS (retrieve), STOW-RS (store). Base URL is deployed per customer site; endpoints are modeled from the DICOMweb standard, not a public Sectra-hosted surface.
+- [Sectra Imaging Domain Security](https://apis.io/security/sectra-imaging/sectra-imaging-domain-security/)
+- [Sectra Imaging Vulnerability Disclosure](https://apis.io/security/sectra-imaging/sectra-imaging-vulnerability-disclosure/)
 
-- **Human URL:** [Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
+## Where to find this API
 
-### Sectra HL7 Integration Interface
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-HL7 v2 messaging for orders, scheduling, worklist, and results/reports between Sectra PACS/RIS and surrounding EMR/RIS systems. Message-based (typically MLLP/HL7 v2), configured per deployment - not a public REST API.
-
-- **Human URL:** [Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
-
-### Sectra FHIRcast Interface
-
-Clinical context synchronization using the FHIRcast standard, which Sectra helped originate and for which it published the first open-source sandbox and reference implementation.
-
-- **Human URL:** [Sectra at the forefront of FHIRcast development](https://medical.sectra.com/resources/sectra-forefront-development-fhircast/)
-- **Source Code:** [github.com/fhircast](https://github.com/fhircast)
-
-### Sectra Web Content API
-
-Embeds third-party web content, results, and applications into the Sectra diagnostic viewer in patient/study context, and launches Sectra in context from other systems. A customer/partner-configured integration point.
-
-- **Human URL:** [Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
-
-### Sectra IHE XDS Interface
-
-IHE Cross-Enterprise Document Sharing (XDS/XDS-I) for registering, querying, and retrieving imaging documents and manifests across enterprise boundaries. Profile-based interoperability, configured per deployment.
-
-- **Human URL:** [Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
-
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/sectra)
 - [Website](https://sectra.com/)
-- [Sectra Medical](https://medical.sectra.com/)
-- [Documentation - Enterprise imaging platform](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
-- [Amplifier Marketplace](https://amplifiermarketplace.sectra.com/)
-- [FHIRcast Source Code](https://github.com/fhircast)
+- [Documentation](https://medical.sectra.com/solutionarea/enterprise-imaging-platform/)
 
-## Pricing
+## API Evangelist rating
 
-Not publicly listed. Sectra sells enterprise imaging to healthcare organizations via direct sales; Amplifier Marketplace / Amplifier Services access is arranged through Sectra sales and partnership channels. Contact Sectra for pricing.
+**Kin Score 8.4** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 0.0 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/sectra-imaging/](https://apis.io/providers/sectra-imaging/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Sectra: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sectra-imaging/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
